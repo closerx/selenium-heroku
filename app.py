@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException, WebDriverException
 from selenium.webdriver.chrome.options import Options
@@ -17,10 +18,13 @@ options.headless = True
 driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH , chrome_options=options)
 
 
-url = 'https://jobs.sa'
+url = 'https://www.python.org'
 driver.get(url)
 time.sleep(3)
-home=driver.find_element(By.CLASS_NAME, "spritejobs box")
-home.click()
+print(driver.title)
+search_bar = driver.find_element_by_name("q")
+search_bar.clear()
+search_bar.send_keys("getting started with python")
+search_bar.send_keys(Keys.RETURN)
 time.sleep(2)
-print(driver.page_source)
+#print(driver.page_source)
