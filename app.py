@@ -22,7 +22,7 @@ url = 'https://www.python.org'
 driver.get(url)
 time.sleep(3)
 print(driver.title)
-search_bar = driver.find_element_by_name("q")
+search_bar = driver.find_element(By.NAME, "q")
 search_bar.clear()
 search_bar.send_keys("getting started with python")
 search_bar.send_keys(Keys.RETURN)
