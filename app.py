@@ -17,8 +17,8 @@ driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH , chrome_options=opt
 
 
 url = 'https://www.google.com/'
-el=driver.get(url)
+driver.get(url)
 
 #el = driver.find_element_by_id('priceblock_ourprice')
 
-print(el.text)
+print(driver.page_source)
