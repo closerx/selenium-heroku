@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException, WebDriverException
 from selenium.webdriver.chrome.options import Options
-import os
+import os,time
 
 CHROMEDRIVER_PATH = os.environ.get('CHROMEDRIVER_PATH', '/usr/local/bin/chromedriver')
 GOOGLE_CHROME_BIN = os.environ.get('GOOGLE_CHROME_BIN', '/usr/bin/google-chrome')
@@ -18,7 +18,6 @@ driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH , chrome_options=opt
 
 url = 'https://jobs.sa'
 driver.get(url)
-
-#el = driver.find_element_by_id('priceblock_ourprice')
+time.sleep(5)
 
 print(driver.page_source)
