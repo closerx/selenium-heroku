@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException, WebDriverException
 from selenium.webdriver.chrome.options import Options
 import os,time
@@ -19,7 +20,7 @@ driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH , chrome_options=opt
 url = 'https://jobs.sa'
 driver.get(url)
 time.sleep(3)
-home=driver.find_elements_by_class_name("spritejobs box")
+home=driver.find_element(By.CLASS_NAME, "spritejobs box")
 home.click()
 time.sleep(2)
 print(driver.page_source)
