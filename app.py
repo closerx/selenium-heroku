@@ -16,7 +16,7 @@ options.headless = True
 driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH , chrome_options=options)
 
 
-url = 'https://www.google.com/'
+url = 'https://jobs.sa'
 driver.get(url)
 
 #el = driver.find_element_by_id('priceblock_ourprice')
